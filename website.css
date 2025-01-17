@@ -75,10 +75,10 @@ body {
   }
   
   .OGheader nav li{
-    display: inline-block;
+    /* display: inline-block;
     margin-left: 70px;
     padding-top: 23px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
     position: absolute;
     height: 30px;
   }
@@ -122,8 +122,22 @@ body {
   }
   
   .OGheader nav ul li {
-    margin: 0 20px;
+    margin: 15px 20px;
   }
+
+  .directions{
+  justify-content: center;
+  align-items: center;
+  position: static;
+  display: flex;
+  margin: 0 100px;
+  list-style: none;
+  padding: 0;
+  }
+
+ 
+
+  
  /*************************************** MENU STYLES *************************************/
  :root {
   --overlay-color: #c1c7c4;
@@ -232,13 +246,8 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.menu-wrap .menu ul li {
-  margin: 15px 0;
-  font-size: 1.5rem;
-  color: black;
-  text-align: center;
+  position: relative;
+    padding-top: 35%;
 }
 
 .menu-wrap .menu ul li:hover {
@@ -250,14 +259,35 @@ body {
   color: inherit;
   transition: color 0.3s ease;
 }
+.f1-logo-MW{
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 
+.directions-MW{
+  position: static;
+  display: inline;
+}
+
+.directions-MW li{
+  padding: 5px;
+  margin: 16px 0;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+  color: #ffffff;
+}
 /* Social Links */
 .menu-socials {
   margin-top: auto;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  position: absolute;
 }
 
 .menu-socials li {
@@ -283,49 +313,225 @@ body {
 /* Container for Features */
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 30px;
     padding: 20px;
     margin-left: 250px;
 }
 
-/* Feature Sections */
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    background: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Container styling for posts */
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: self-start;
+  position: relative;
+  left: 60px;
+  width: 100%;
 }
 
-.feature:nth-child(even) {
-    flex-direction: row-reverse; /* Alternate layout for even sections */
+/* Individual post card */
+.post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 13px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* 3 posts per row */
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
-.feature img {
-    width: 50%;
-    height: auto;
-    border-radius: 10px;
+/* Style for username section */
+.post-username {
+  display: flex; /* Arrange items horizontally */
+  align-items: center; /* Vertically center the items */
+  margin-bottom: 10px;
 }
 
-.feature-content {
-    flex: 1;
-    padding: 20px;
+/* Style for user image */
+.post-U-IMG {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 50px; /* Set a fixed width for the image container */
+  height: 50px; /* Set a fixed height for the image container */
+  border-radius: 50%; /* Make the image circular */
+  overflow: hidden; /* Clip overflowing parts of the image */
+  margin-right: 10px; /* Add spacing between the image and the name */
 }
 
-.feature-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #163c29; /* Match your nav bar theme */
+
+
+.post-U-IMG img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fills the circle */
+  opacity: 1;
+  z-index: 0;
+  position: relative;
 }
 
-.feature-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
+/* Style for user name */
+.post-U-NAME {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-content{
+  position: relative;
+}
+
+.post-content-IMG img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  object-fit: cover; /* Ensure proper image scaling */
+}
+
+
+
+/* Post text styling */
+.post-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+/* Read More button styling */
+.btn.read-more {
+  background-color: rgb(116, 115, 115);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.btn.read-more:hover {
+  background-color: rgb(148, 148, 148);
+}
+
+.like-comment-share{
+  flex-direction: row;
+  display: flex;
+  gap: 10px;
+  padding-top: 25px;
+}
+
+.like-comment-share button {
+  background: transparent;
+  border: none;
+}
+
+
+.like-btn{
+  display: flex;
+  align-items: self-start;
+
+}
+.like-btn path {
+  fill: black;
+  stroke-width: 0;
+  stroke: #000000;
+  
+}
+
+.comment-btn path {
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #000000;
+  
+}
+
+.share-btn{
+  padding-top: 2px;
+}
+.share-btn path {
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #000000;
+  
+}
+
+.info{
+  right: 25%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.info-box{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 13px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* 3 posts per row */
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 155%;
+}
+
+.info-box h2{
+  margin-left: 20px;
+}
+
+/* .info-title-race{
+  display: flex;
+  flex-direction: row;
+} */
+
+.info-box-head-arrow{
+  margin-left: 20px;
+}
+
+.info-box a{
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+#countdown-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#races-list-container {
+  margin-top: 20px;
+}
+
+#races-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#races-list li {
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 /* Footer */
@@ -348,11 +554,23 @@ footer {
 /******************************************MOBILE VERSION*************************************************/
 @media (max-width: 768px) {
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  margin-left: 0;
+  justify-content: center;
+  align-items: center;
+}
+.posts{
+  left: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.post {
+  width: calc(50% - 20px); /* 2 posts per row on smaller screens */
 }
 
   .menu-wrap .hamburger > div,
@@ -407,5 +625,21 @@ footer {
     display: none;
     opacity: 0;
 
+  }
+
+  .info{
+    display: none;
+  }
+
+  footer{
+    margin-left: 0;
+    position: relative;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .post {
+      width: 100%; /* 1 post per row on mobile screens */
   }
 }
