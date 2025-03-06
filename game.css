@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    background-color: #492626;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+#game-container {
+    display: inline-block;
+    border: 5px solid white;
+    margin-top: 20px;
+}
+
+#lap-time {
+    font-size: 18px;
+    margin-top: 10px;
+}

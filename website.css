@@ -487,7 +487,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  width: 155%;
+  width: 125%;
 }
 
 .info-box h2{
@@ -533,6 +533,32 @@ body {
   margin: 5px 0;
   font-size: 1rem;
 }
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.standings-table th, .standings-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.standings-table th {
+  background-color: #333;
+  color: white;
+}
+
+.team-logo {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 
 /* Footer */
 footer {

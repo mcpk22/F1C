@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>F1 Visualization</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <canvas id="f1Canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('f1Canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const car = {
+      x: 50,
+      y: canvas.height / 2,
+      width: 10,
+      height: 10,
+      color: 'red'
+    };
+
+    let frame = 0;
+
+    function drawCar(x, y) {
+      ctx.fillStyle = car.color;
+      ctx.fillRect(x, y, car.width, car.height); // Simple pixel art car
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+      // Simple animation - move the car to the right
+      const newX = car.x + Math.sin(frame / 50) * 5; // Sinusoidal movement
+      drawCar(newX, car.y);
+
+      frame++;
+      requestAnimationFrame(animate); // Call animate again on the next frame
+    }
+
+    animate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>F1 Race Visualization</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+    }
+    #controls {
+      width: 220px;
+      background: #444;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    #controls h2 {
+      margin-top: 0;
+    }
+    #controls label {
+      display: block;
+      margin-top: 10px;
+    }
+    #controls select, #controls button {
+      width: 100%;
+      margin: 5px 0;
+      padding: 5px;
+      font-size: 16px;
+    }
+    #canvasContainer {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    #raceTitle {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    canvas {
+      background: #333;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #444;
+    }
+    #eventLog {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  </style>
+  <!-- Include GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="controls">
+    <h2>Race Selector</h2>
+    <label for="seasonSelect">Season:</label>
+    <select id="seasonSelect"></select>
+    <label for="raceSelect">Race:</label>
+    <select id="raceSelect"></select>
+    <button id="startRaceButton">Start Race</button>
+  </div>
+  <div id="canvasContainer">
+    <div id="raceTitle"></div>
+    <canvas id="raceCanvas" width="1000" height="600"></canvas>
+    <div id="eventLog"></div>
+  </div>
+  <script src="animate.js"></script>
+</body>
+</html>
